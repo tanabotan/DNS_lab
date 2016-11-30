@@ -1,11 +1,11 @@
-//IPƒAƒhƒŒƒX‚ğ‹U‘•‚µ‚ÄIPƒpƒPƒbƒg‚ğ‘—‚é‚±‚Æ‚É¬Œ÷‚µ‚Ü‚µ‚½B
-// ‰º‚Ì‰æ‘œ‚Å100.100.100.100‚ÌIPƒAƒhƒŒƒX‚©‚ç200.200.200.200‚ÉŒü‚©‚Á‚Ä
-// IPƒvƒƒgƒRƒ‹‚ÌƒpƒPƒbƒg‚ª‘—‚ç‚ê‚½‚±‚Æ‚É‚È‚Á‚Ä‚¢‚é‚Ì‚ªŠm”F‚Å‚«‚Ü‚·
-// iÀÛ‚É‚Í192.168.0.20‚©‚ç192.168.0.2‚Ö‘—‚Á‚Ä‚¢‚Ü‚·jB
-//@EWindowsã‚ÅƒRƒ“ƒpƒCƒ‹EÀs‚·‚éê‡‚ÍCygwin“™‚Ås‚Á‚Ä‚­‚¾‚³‚¢i‚±‚Ìƒ\[ƒX‚ÍLinux—p‚Å‚·jB
-// ERAWƒ\ƒPƒbƒg‚ğg‚Á‚Ä‚¢‚é‚Ì‚ÅÀs‚ÉŒ ŒÀ‚ÌƒGƒ‰[‚É’ïG‚·‚é‚©‚à‚Å‚·B
-// Œ»İ‚Íƒtƒ‰ƒOƒƒ“ƒg‚É‘Î‰‚µ‚Ä‚¢‚Ü‚¹‚ñOO
-//ihttp://d.hatena.ne.jp/KAINS/20071112‚æ‚èˆø—pj
+//IPã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’å½è£…ã—ã¦IPãƒ‘ã‚±ãƒƒãƒˆã‚’é€ã‚‹ã“ã¨ã«æˆåŠŸã—ã¾ã—ãŸã€‚
+// ä¸‹ã®ç”»åƒã§100.100.100.100ã®IPã‚¢ãƒ‰ãƒ¬ã‚¹ã‹ã‚‰200.200.200.200ã«å‘ã‹ã£ã¦
+// IPãƒ—ãƒ­ãƒˆã‚³ãƒ«ã®ãƒ‘ã‚±ãƒƒãƒˆãŒé€ã‚‰ã‚ŒãŸã“ã¨ã«ãªã£ã¦ã„ã‚‹ã®ãŒç¢ºèªã§ãã¾ã™
+// ï¼ˆå®Ÿéš›ã«ã¯192.168.0.20ã‹ã‚‰192.168.0.2ã¸é€ã£ã¦ã„ã¾ã™ï¼‰ã€‚
+//ã€€ãƒ»Windowsä¸Šã§ã‚³ãƒ³ãƒ‘ã‚¤ãƒ«ãƒ»å®Ÿè¡Œã™ã‚‹å ´åˆã¯Cygwinç­‰ã§è¡Œã£ã¦ãã ã•ã„ï¼ˆã“ã®ã‚½ãƒ¼ã‚¹ã¯Linuxç”¨ã§ã™ï¼‰ã€‚
+// ãƒ»RAWã‚½ã‚±ãƒƒãƒˆã‚’ä½¿ã£ã¦ã„ã‚‹ã®ã§å®Ÿè¡Œæ™‚ã«æ¨©é™ã®ã‚¨ãƒ©ãƒ¼ã«æŠµè§¦ã™ã‚‹ã‹ã‚‚ã§ã™ã€‚
+// ç¾åœ¨ã¯ãƒ•ãƒ©ã‚°ãƒ¡ãƒ³ãƒˆã«å¯¾å¿œã—ã¦ã„ã¾ã›ã‚“ï¼¾ï¼¾
+//ï¼ˆhttp://d.hatena.ne.jp/KAINS/20071112ã‚ˆã‚Šå¼•ç”¨ï¼‰
 
 #include <stdio.h>
 
@@ -35,7 +35,7 @@ union IpHeader {
 
 int rawsock(); unsigned short checksum(unsigned short*); 
 void iptoint(char*, int*); void sends(char*, char*, int, char*); 
-void printiph(IpHeader?);
+void printiph(IpHeader);
 
 extern int errno;
 
@@ -50,21 +50,21 @@ int main() {
 
 	printf("--------START\n");
 	
-	printf("i‹U‘•‚µ‚½‚¢j‘—MŒ³IPƒAƒhƒŒƒX‚ÍH\n");
+	printf("ï¼ˆå½è£…ã—ãŸã„ï¼‰é€ä¿¡å…ƒIPã‚¢ãƒ‰ãƒ¬ã‚¹ã¯ï¼Ÿ\n");
 	scanf("%s\n", &srcIP);
-	printf("i‹U‘•‚µ‚½‚¢jˆ¶æIPƒAƒhƒŒƒX‚ÍH\n");
+	printf("ï¼ˆå½è£…ã—ãŸã„ï¼‰å®›å…ˆIPã‚¢ãƒ‰ãƒ¬ã‚¹ã¯ï¼Ÿ\n");
 	scanf("%s\n", &destIP);
-	printf("’ÊMƒvƒƒgƒRƒ‹‚Ìí—Ş‚ÍHH(def=0)\n");
+	printf("é€šä¿¡ãƒ—ãƒ­ãƒˆã‚³ãƒ«ã®ç¨®é¡ã¯ï¼Ÿï¼Ÿ(def=0)\n");
 	scanf("%s\n", &prot);
-	printf("ˆ¶æIPƒAƒhƒŒƒX‚ÍH\n");
+	printf("å®›å…ˆIPã‚¢ãƒ‰ãƒ¬ã‚¹ã¯ï¼Ÿ\n");
 	scanf("%s\n", &realdestIP);
 
-	printf("“ü—Í“à—e‚Í‚±‚ê‚Å‚æ‚ë‚µ‚¢‚Å‚·‚©H\n");
-	printf("‹U‘•‘—MŒ³IP@EEE%s\n", srcIP);
-	printf("‹U‘•ˆ¶æIP@@EEE%s\n", destIP);
-	printf("’ÊMƒvƒƒgƒRƒ‹EEE%s\n", prot);
-	printf("ˆ¶æIPƒAƒhƒŒƒXEEE%s\n", realdestIP);
-	printf("Y‚à‚µ‚­‚ÍN");
+	printf("å…¥åŠ›å†…å®¹ã¯ã“ã‚Œã§ã‚ˆã‚ã—ã„ã§ã™ã‹ï¼Ÿ\n");
+	printf("å½è£…é€ä¿¡å…ƒIPã€€ãƒ»ãƒ»ãƒ»%s\n", srcIP);
+	printf("å½è£…å®›å…ˆIPã€€ã€€ãƒ»ãƒ»ãƒ»%s\n", destIP);
+	printf("é€šä¿¡ãƒ—ãƒ­ãƒˆã‚³ãƒ«ãƒ»ãƒ»ãƒ»%s\n", prot);
+	printf("å®›å…ˆIPã‚¢ãƒ‰ãƒ¬ã‚¹ãƒ»ãƒ»ãƒ»%s\n", realdestIP);
+	printf("Yã‚‚ã—ãã¯N");
 	scanf("%s\n", YorN);
 
 	if(YorN == "Y"){
@@ -72,10 +72,10 @@ int main() {
 		sends(srcIP, destIP, prot, realdestIP);
 	}
 	if(YorN == "N"){
-		printf("‚à‚¤ˆê“x‹N“®‚µ‚È‚¨‚µ‚Ä‚­‚¾‚³‚¢\n");
+		printf("ã‚‚ã†ä¸€åº¦èµ·å‹•ã—ãªãŠã—ã¦ãã ã•ã„\n");
 	}
 	else{
-		printf("Y‚©NˆÈŠO‚ª“ü—Í‚³‚ê‚½‚½‚ßI—¹‚µ‚Ü‚·B\n");
+		printf("Yã‹Nä»¥å¤–ãŒå…¥åŠ›ã•ã‚ŒãŸãŸã‚çµ‚äº†ã—ã¾ã™ã€‚\n");
 	}
 
 	printf("\n--------END\n");
@@ -118,22 +118,22 @@ void sends(char *srcaddress, char *destaddress, int protocol, char *realdestip) 
 
 	IpHeader iph;
 	srand(1686);
-	*iph.c = 69;	//ƒo[ƒWƒ‡ƒ“‚Æƒwƒbƒ_’·i1ƒIƒNƒeƒbƒgj
-	*(iph.c+1) = 0;	//TOSi‚PƒIƒNƒeƒbƒgj
-	*(iph.s+1) = 20;	//ƒf[ƒ^ƒOƒ‰ƒ€’·i‚QƒIƒNƒeƒbƒgj
-	*(iph.s+2) = rand()%65536;	//IDi‚QƒIƒNƒeƒbƒgj
-	*(iph.s+3) = 0;		//ƒtƒ‰ƒOƒƒ“ƒg(‚QƒIƒNƒeƒbƒg)
-	*(iph.c+8) = 64;	//TTLi‚PƒIƒNƒeƒbƒgj
-	*(iph.c+9) = (unsigned char)protocol;	//ƒvƒƒgƒRƒ‹”Ô†i‚PƒIƒNƒeƒbƒgj
-	*(iph.s+5) = 0;	//ƒ`ƒFƒbƒNƒTƒ€i‚QƒIƒNƒeƒbƒgj
+	*iph.c = 69;	//ãƒãƒ¼ã‚¸ãƒ§ãƒ³ã¨ãƒ˜ãƒƒãƒ€é•·ï¼ˆ1ã‚ªã‚¯ãƒ†ãƒƒãƒˆï¼‰
+	*(iph.c+1) = 0;	//TOSï¼ˆï¼‘ã‚ªã‚¯ãƒ†ãƒƒãƒˆï¼‰
+	*(iph.s+1) = 20;	//ãƒ‡ãƒ¼ã‚¿ã‚°ãƒ©ãƒ é•·ï¼ˆï¼’ã‚ªã‚¯ãƒ†ãƒƒãƒˆï¼‰
+	*(iph.s+2) = rand()%65536;	//IDï¼ˆï¼’ã‚ªã‚¯ãƒ†ãƒƒãƒˆï¼‰
+	*(iph.s+3) = 0;		//ãƒ•ãƒ©ã‚°ãƒ¡ãƒ³ãƒˆ(ï¼’ã‚ªã‚¯ãƒ†ãƒƒãƒˆ)
+	*(iph.c+8) = 64;	//TTLï¼ˆï¼‘ã‚ªã‚¯ãƒ†ãƒƒãƒˆï¼‰
+	*(iph.c+9) = (unsigned char)protocol;	//ãƒ—ãƒ­ãƒˆã‚³ãƒ«ç•ªå·ï¼ˆï¼‘ã‚ªã‚¯ãƒ†ãƒƒãƒˆï¼‰
+	*(iph.s+5) = 0;	//ãƒã‚§ãƒƒã‚¯ã‚µãƒ ï¼ˆï¼’ã‚ªã‚¯ãƒ†ãƒƒãƒˆï¼‰
 	int srcip[4] = {}, destip[4] = {};
 	iptoint(srcaddress, srcip);
 	iptoint(destaddress, destip);
-	*(iph.c+12) = *srcip;	//srcIPi‚SƒIƒNƒeƒbƒgj
+	*(iph.c+12) = *srcip;	//srcIPï¼ˆï¼”ã‚ªã‚¯ãƒ†ãƒƒãƒˆï¼‰
 	*(iph.c+13) = *(srcip+1);
 	*(iph.c+14) = *(srcip+2);
 	*(iph.c+15) = *(srcip+3);
-	*(iph.c+16) = *destip;	//destIPi‚SƒIƒNƒeƒbƒgj
+	*(iph.c+16) = *destip;	//destIPï¼ˆï¼”ã‚ªã‚¯ãƒ†ãƒƒãƒˆï¼‰
 	*(iph.c+17) = *(destip+1);
 	*(iph.c+18) = *(destip+2);
 	*(iph.c+19) = *(destip+3);
